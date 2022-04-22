@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_test/routes/routes.dart';
 import 'package:web_test/screens/naigation_screen.dart';
 
 void main() async {
+  ResponsiveSizingConfig.instance.setCustomBreakpoints(
+    ScreenBreakpoints(desktop: 800, tablet: 550, watch: 200),
+  );
   await initHiveForFlutter();
   runApp(const MyApp());
 }
